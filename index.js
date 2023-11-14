@@ -86,3 +86,16 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+
+var netTotal = 0;
+
+for (var i = 0; i < finances.length; i++) {
+  netTotal += finances[i][1];
+}
+
+console.log('Financial Analysis');
+console.log('----------------');
+console.log('Total Months: ' + finances.length);
+console.log('Total: $' + netTotal);
+
