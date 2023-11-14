@@ -10,14 +10,14 @@ N/A.
 
 ## Usage
 
-https://meisterstu.github.io/Bootstrap-Portfolio/
+https://meisterstu.github.io/Console-Finances/
 
 <img width="1440" alt="Console-Finances-screenshot" src="./images/Console-Finances Screenshot.png">
 
 
 ## Credits
 
-N/A
+Assistance was received from the tutor Jose Lopez, and the TA Mahyar Mottaghi Zadeh with tackling the correct syntax and refracting the code
 
 ## License
 
