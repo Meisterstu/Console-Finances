@@ -87,15 +87,48 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-
+//var to give netTotal
 var netTotal = 0;
+//var to hold previous value
+var previousValue = 0;
+//var to track change
+var change = 0;
+//var to give avge change
+var averageChange = 0;
+//var total of changes
+var changeTotal = 0;
+//var array to store biggest increase
+var greatestIncrease = ['', 0]
+//var array to store biggest decrease
+var greatestDecrease = ['', 10000000]
 
+//for loop to count through finances data array
 for (var i = 0; i < finances.length; i++) {
   netTotal += finances[i][1];
+  // code to track changes
+  if (i > 0)
+    change = finances[i][1] - previousValue;
+  previousValue = finances[i][1];
+  changeTotal += change;
+
+  // calculating greatest increase and decrease
+  if (change > greatestIncrease[1]) {
+    greatestIncrease = [finances[i][0], change]
+  }
+  if (change < greatestDecrease[1]) {
+    greatestDecrease = [finances[i][0], change]
+  }
 }
+
+// calculating average of changes with rounding
+averageChange = Math.round((changeTotal / (finances.length - 1)) * 100) / 100;
+
+
 
 console.log('Financial Analysis');
 console.log('----------------');
 console.log('Total Months: ' + finances.length);
 console.log('Total: $' + netTotal);
-
+console.log('Average Change ' + averageChange)
+console.log('Greatest Increase in Profits/Losses:  ' + greatestIncrease);
+console.log('Greatest Decrease in Profits/Losses:  ' + greatestDecrease);
